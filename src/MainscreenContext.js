@@ -15,34 +15,34 @@ export const MainscreenProvider = (props) => {
         },
         {
           name: "Follow up with clients",
-          switch: true,
+          switch: false,
           time: "35 mins",
           ruppes: 60,
-          people: ["RS", "TT", "YP"],
+          people: ["RS", "TT", "YP","GG","UU","OO","PP"],
         },
         {
           name: "Take feedback",
           switch: true,
           time: "35 mins",
           ruppes: 80,
-          people: ["RS", "TT", "YP"],
+          people: ["RS", "TT", "YP","GG"],
         },
       ],
 
       TechTeam: [
         {
           name: "Website quotation",
-          switch: true,
+          switch: false,
           time: "30 mins",
           ruppes: 50,
-          people: ["RS", "TT", "YP"],
+          people: ["RS", "TT", "YP","GG","UU","OO","PP"],
         },
         {
-          name: "Andorid app development",
+          name: "Android app development",
           switch: true,
           time: "35 mins",
           ruppes: 60,
-          people: ["RS", "TT", "YP"],
+          people: ["RS", "TT", "YP","GG"],
         },
         {
           name: "IOS app development",
@@ -63,7 +63,7 @@ export const MainscreenProvider = (props) => {
           switch: true,
           time: "35 mins",
           ruppes: 80,
-          people: ["RS", "TT", "YP"],
+          people: ["RS", "TT", "YP","GG","UU","OO","PP"],
         },
       ],
 
@@ -73,14 +73,14 @@ export const MainscreenProvider = (props) => {
           switch: true,
           time: "30 mins",
           ruppes: 50,
-          people: ["RS", "TT", "YP", "GG"],
+          people: ["RS", "TT", "YP", "GG","UU","OO","PP"],
         },
         
       ],
     },
   ]);
   return (
-    <MainscreenContext.Provider value={content}>
+    <MainscreenContext.Provider value={[content,setContent]}>
       {props.children}
     </MainscreenContext.Provider>
   );

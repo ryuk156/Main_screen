@@ -15,9 +15,9 @@ const App = () => {
         <Navbar />
         <Search />
 
-        <Accordion title="Sales" content={content.Sales} />
-        <Accordion title="Teach Team" content={content.TechTeam} />
-        <Accordion title="Marketing" content={content.Marketing} />
+        <Accordion title="Sales" content={content[0].Sales} />
+        <Accordion title="Teach Team" content={content[0].TechTeam} />
+        <Accordion title="Marketing" content={content[0].Marketing} />
         {console.log(content)}
       </div>
     </div>

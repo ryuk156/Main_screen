@@ -1,11 +1,11 @@
 import React from'react';
 import './Switch.css'
 
-const Switch = ()=>{
+const Switch = ({value})=>{
    
     return(
         <div className="inputwrapper">
-       <input type="checkbox" className="Input" />
+       <input type="checkbox" className="Input" checked={value} />
       
         </div>
      

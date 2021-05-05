@@ -15,7 +15,7 @@ const Accordion = ({ title, content }) => {
   return (
     <div className="AccordionContainer">
       <div className="AccordionWrapper" onClick={() => toggle(index)}>
-        <div className="ml-5 mt-3 font-weight-bolder">{title}</div>
+        <div className="ml-5 mt-3 Accordion-text">{title}</div>
 
         <div className="Accordionicon">
           {/* <span className="">{clicked===index?"true":"false"}</span> */}
@@ -23,7 +23,7 @@ const Accordion = ({ title, content }) => {
       </div>
       {clicked === index ? (
         <div className="AccordionDown">
-          <div className="row ml-4 mt-2 mb-2 ">
+          <div className="row ml-2 mr-2 mt-2 mb-2 ">
             {content &&
               content.map((all) => {
                 return (
@@ -32,6 +32,8 @@ const Accordion = ({ title, content }) => {
                     name={all.name}
                     ruppes={all.ruppes}
                     people={all.people}
+                    value={all.switch}
+                    color={all.color}
                   />
                 );
               })}

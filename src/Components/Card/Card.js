@@ -1,17 +1,41 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "./Card.css";
 import Time_icon from "../../assets/icons/time.png";
 import Link_icon from "../../assets/icons/link-icon.png";
 import Userinitial from "../Userinitial/Userinitial";
+import { MainscreenContext } from "../../MainscreenContext.js";
 
-const Card = ({ time, name, ruppes, people }) => {
+const Card = ({ time, name, ruppes, people, value }) => {
+  const [content, setContent] = useContext(MainscreenContext);
+  const [checked, setChecked] = React.useState(value);
+
+  const updatecheckbox = (checked) => {
+    setChecked(!checked);
+    setContent((previous) => [...previous, { switch: checked }]);
+  };
+
+  let allpeople = [];
+  if (people.length >= 3) {
+    for (let i = 0; i < 3; i++) {
+      allpeople.push(people[i]);
+    }
+  }
+
   return (
-    <div className="col-lg-4 col-md-6 col-sm-10 pt-4 pb-4">
+    <div className="col-xl-3 col-lg-5 col-md-10 col-sm-10  m-4 ">
       <div className="Cards pr-4 pl-4">
         <div className="Cards-head">
           <div className="Cards-head-left">{name}</div>
           <div className="Cards-head-right">
-            {/* <Switch onChange={(event)=>settoggled(event.target.checked)} /> */}
+            <label class="switch">
+              <input
+                type="checkbox"
+                className="Input"
+                defaultChecked={checked}
+                onChange={updatecheckbox}
+              />
+              <span class="slider round"></span>
+            </label>
           </div>
         </div>
 
@@ -27,13 +51,9 @@ const Card = ({ time, name, ruppes, people }) => {
 
           <div className="Cards-head">
             <div className="Cards-bottom-left">
-              {people.length > 4
-                ? people.map((initial) => {
-                    return <Userinitial initial={initial} />;
-                  })
-                : people.map((initial) => {
-                    return <Userinitial initial={initial} />;
-                  })}
+              {allpeople.map((initial) => {
+                return <Userinitial initial={initial} />;
+              })} <span className="card-people text-muted">+{people.length} more </span>
             </div>
             <div className="Cards-bottom-right">
               <img className="Link_icon" src={Link_icon} />

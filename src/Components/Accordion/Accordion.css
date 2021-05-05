@@ -4,7 +4,7 @@
 
 .AccordionWrapper {
   display: flex;
-  width: auto;
+  width: 100%;
   text-align: center;
   height: 55px;
   margin: 40px 0px 0px 0px;
@@ -16,7 +16,7 @@
 
 .AccordionDown {
   display: flex;
-  width: auto;
+  width: 100%;
   text-align: center;
   margin: 0px 0px 16px 0px;
   border-radius: 4px;
@@ -24,4 +24,35 @@
   border: solid 1px #f6f6f6;
   border-top: none;
   background-color: #ffffff;
+}
+
+.Accordion-text{
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-left: 2px;
+  color: #352652;
+}
+
+
+
+
+@media screen and (max-width: 510px) {
+  .AccordionContainer {
+    margin: 40px 20px 16px 20px;
+  }
+}
+
+@media all and (max-width: 380px) {
+  .AccordionContainer {
+    margin: 40px 10px 16px 10px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .AccordionContainer {
+    margin: 40px 0px 16px 0px;
+  }
 }
